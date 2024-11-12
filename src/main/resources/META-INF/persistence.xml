@@ -1,0 +1,18 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="nome_da_unidade">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>seu.pacote.model.Cliente</class>
+        <class>seu.pacote.model.Produto</class>
+        <class>seu.pacote.model.Pedido</class>
+        <class>seu.pacote.model.Pagamento</class>
+        <class>seu.pacote.model.ItemPedido</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/nome_do_banco"/>
+            <property name="javax.persistence.jdbc.user" value="usuario"/>
+            <property name="javax.persistence.jdbc.password" value="senha"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.ddl-generation" value="create-tables"/>
+        </properties>
+    </persistence-unit>
+</persistence>
