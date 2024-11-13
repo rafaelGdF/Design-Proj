@@ -23,8 +23,8 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        // Criação do EntityManager e EntityManagerFactory
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("nome_da_unidade");
+        // Criação do EntityManager e EntityManagerFactory (com configurações do persistence.xml)
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("loja_unit");
         EntityManager em = emf.createEntityManager();
 
         // Repositórios

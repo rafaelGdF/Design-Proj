@@ -8,16 +8,16 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date data;
+    private Date data_pedido;
 
     // Construtores, getters e setters
     public Pedido() {}
 
-    public Pedido(Date data) {
-        this.data = data;
+    public Pedido(Date data_pedido) {
+        this.data_pedido = data_pedido;
     }
 
     public Long getId() { return id; }
-    public Date getData() { return data; }
-    public void setData(Date data) { this.data = data; }
+    public Date getData() { return data_pedido; }
+    public void setData(Date data_pedido) { this.data_pedido = data_pedido; }
 }

@@ -1,18 +1,27 @@
-<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
-    <persistence-unit name="nome_da_unidade">
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                                 http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="loja_unit">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>seu.pacote.model.Cliente</class>
-        <class>seu.pacote.model.Produto</class>
-        <class>seu.pacote.model.Pedido</class>
-        <class>seu.pacote.model.Pagamento</class>
-        <class>seu.pacote.model.ItemPedido</class>
+        <class>org.example.model.Cliente</class>
+        <class>org.example.model.Produto</class>
+        <class>org.example.model.Pedido</class>
+        <class>org.example.model.ItemPedido</class>
+        <class>org.example.model.Pagamento</class>
+        <jta-data-source>jdbc/loja_db</jta-data-source>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/nome_do_banco"/>
-            <property name="javax.persistence.jdbc.user" value="usuario"/>
-            <property name="javax.persistence.jdbc.password" value="senha"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="eclipselink.logging.level" value="FINE"/>
-            <property name="eclipselink.ddl-generation" value="create-tables"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/loja_db"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <!-- Criação automática do banco de dados -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="create" />
+            <!-- Ou para atualização, caso você não queira recriar as tabelas toda vez -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="update" />
         </properties>
     </persistence-unit>
 </persistence>
